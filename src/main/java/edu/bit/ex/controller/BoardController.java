@@ -20,29 +20,13 @@ public class BoardController {
 
 	@Autowired
 	private BoardService boardService;
-
-//	@GetMapping("/list")
-//	public String list(Criteria cri,Model model) throws Exception {
-//		
-//		log.debug("list()...");
-//		log.info("list()...");
-//		log.info(""+cri);
-//		
-//		model.addAttribute("list", boardService.getList(cri));	
-//		 
-//		int total = boardService.getTotal(cri);
-//		log.info("total" + total);
-//		 
-//		model.addAttribute("pageMaker", new PageVO(cri,total));
-//	
-//		return "list";
-//	}
 	
 	 @GetMapping("list")
-	 public String list(Criteria cri, Model model) {	
+	 public String list(Criteria cri, Model model) throws Exception {	
 		 //페이징 처리한 부분
+		 log.debug("list()...");
 		 log.info("list 호출");
-		 //log.info(cri);
+		 log.info(""+cri);
 		 model.addAttribute("list", boardService.getList(cri));	
 		 
 		 int total = boardService.getTotal(cri);
@@ -51,6 +35,5 @@ public class BoardController {
 		 model.addAttribute("pageMaker", new PageVO(cri,total));
 		 return "list";
 	 }
-
 	
 }
