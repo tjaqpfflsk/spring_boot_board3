@@ -49,4 +49,11 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.getBoard(bId);
 	}
 
+	@Override
+	public void modify(BoardVO boardVO) {
+		log.info("mapper.modify()호출");
+		mapper.modify(boardVO);
+		
+	}
+
 }

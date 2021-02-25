@@ -14,8 +14,9 @@
 
 <div class="container">
   <h2 class="text-warning">${content_view.bTitle}</h2>
-  <form action="${pageContext.request.contextPath}/board/write" method="post"> 
+  <form action="${pageContext.request.contextPath}/board/modify" method="post"> 
   <table class="table table-striped">
+  		<input type="hidden" name="bId" value="${content_view.bId}"/> 
   		<tr>
 			<td>번호</td>
 			<td>${content_view.bId}</td>
@@ -37,9 +38,17 @@
 			<td><textarea rows= "10" cols="100" name="bContent"/>${content_view.bContent}</textarea></td>
 		</tr>
 		<tr>
-			<td colspan="2"><input type="submit" class="btn btn-outline-warning bg-warning text-white" 
-			value="입력"><button type="button" class="btn btn-outline-warning bg-warning text-white"
-			onclick="location.href='${pageContext.request.contextPath}/board/list'">목록보기</button></td>
+			<td colspan="2">
+			<input type="submit" class="btn btn-outline-warning bg-warning text-white" 
+			value="수정">
+			<button type="button" class="btn btn-outline-warning bg-warning text-white"
+			onclick="location.href='${pageContext.request.contextPath}/board/list'">목록보기</button>
+			<button type="button" class="btn btn-outline-warning bg-warning text-white"
+			onclick="location.href='${pageContext.request.contextPath}/board/delete'">삭제</button>
+			<button type="button" class="btn btn-outline-warning bg-warning text-white"
+			onclick="location.href='${pageContext.request.contextPath}/board/reply'">답변</button>
+			</td>
+			
 		</tr>
 	</table>
 	</form>

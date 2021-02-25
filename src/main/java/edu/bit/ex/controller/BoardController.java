@@ -64,6 +64,15 @@ public class BoardController {
 		 return "board/content_view";
 	 }
 	 
+	 @PostMapping("board/modify")
+	 public String modify(BoardVO boardVO) throws Exception {	
+		 log.info("modify()실행");
+		//받아올 것이 없고 집어 넣기만하려면 model이 필요가 없다.
+		 boardService.modify(boardVO);
+		 
+		 return "redirect:list";
+	 }
+	 
 	 
 	 
 	 

@@ -16,4 +16,5 @@ public interface BoardMapper {
 	public int getTotalCount(Criteria cri);
 	public void insert(BoardVO boardVO);
 	public BoardVO getBoard(int bId);
+	public void modify(BoardVO boardVO);
 }

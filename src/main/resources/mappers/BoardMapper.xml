@@ -46,5 +46,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		]]>
 	</select>
 
+<!-- 수정하는 부분 -->
+	<select id="modify">
+		<![CDATA[
+			update mvc_board set bName=#{bName},bTitle=#{bTitle},bContent=#{bContent} where bId = #{bId}
+		]]>
+	</select>
+
+
 	
 	</mapper>

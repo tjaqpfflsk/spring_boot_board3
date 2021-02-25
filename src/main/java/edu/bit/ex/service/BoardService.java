@@ -17,6 +17,8 @@ public interface BoardService {
 	public void writeBoard(BoardVO boardVO);
 
 	public BoardVO getBoard(int bId);
+
+	public void modify(BoardVO boardVO);
 	
 	}
 	
