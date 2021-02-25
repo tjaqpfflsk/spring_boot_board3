@@ -33,4 +33,10 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.getTotalCount(criteria);
 	}
 
+	@Override
+	public void writeBoard(BoardVO boardVO) {
+		mapper.insert(boardVO);
+		
+	}
+
 }
