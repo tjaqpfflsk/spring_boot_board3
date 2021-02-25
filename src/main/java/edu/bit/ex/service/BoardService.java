@@ -15,6 +15,8 @@ public interface BoardService {
 	public int getTotal(Criteria criteria);
 
 	public void writeBoard(BoardVO boardVO);
+
+	public BoardVO getBoard(int bId);
 	
 	}
 	

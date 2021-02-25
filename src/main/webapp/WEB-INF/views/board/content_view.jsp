@@ -13,20 +13,28 @@
 <body>
 
 <div class="container">
-  <h2 class="text-warning">게시판</h2>
+  <h2 class="text-warning">${content_view.bTitle}</h2>
   <form action="${pageContext.request.contextPath}/board/write" method="post"> 
   <table class="table table-striped">
+  		<tr>
+			<td>번호</td>
+			<td>${content_view.bId}</td>
+		</tr>
+		<tr>
+			<td>히트</td>
+			<td>${content_view.bHit}</td>
+		</tr>
       	<tr>
 			<td>이름</td>
-			<td><input type="text" name="bName"/></td>
+			<td><input type="text" name="bName" value="${content_view.bName}"/></td>
 		</tr>
 		<tr>
 			<td>제목</td>
-			<td><input type="text" name="bTitle"/></td>
+			<td><input type="text" name="bTitle" value="${content_view.bTitle}"/></td>
 		</tr>
 		<tr>
 		<td>내용</td>
-			<td><textarea rows= "10" cols="100" name="bContent"/></textarea></td>
+			<td><textarea rows= "10" cols="100" name="bContent"/>${content_view.bContent}</textarea></td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" class="btn btn-outline-warning bg-warning text-white" 

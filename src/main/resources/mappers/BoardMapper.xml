@@ -32,14 +32,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 <!-- insert -->
-<insert id="insert" >
+	<insert id="insert" >
    <![CDATA[
      insert into mvc_board (bId, bName, bTitle, bContent, bHit, bGroup, bStep, bIndent) 
      values (mvc_board_seq.nextval, #{bName}, #{bTitle}, #{bContent}, 0, mvc_board_seq.currval, 0, 0)
    ]]>
    </insert>
 
-	
+<!-- content_view 읽어오는 중 -->
+	<select id="getBoard" resultType="edu.bit.ex.vo.BoardVO">
+		<![CDATA[
+			select * from mvc_board where bId = #{bId}
+		]]>
+	</select>
 
 	
 	</mapper>

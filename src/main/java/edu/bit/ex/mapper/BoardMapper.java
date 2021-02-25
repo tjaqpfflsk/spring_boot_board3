@@ -15,4 +15,5 @@ public interface BoardMapper {
 	public List<BoardVO> getListWithPaging(Criteria criteria);
 	public int getTotalCount(Criteria cri);
 	public void insert(BoardVO boardVO);
+	public BoardVO getBoard(int bId);
 }

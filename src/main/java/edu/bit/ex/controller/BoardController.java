@@ -1,3 +1,4 @@
+//마스터
 package edu.bit.ex.controller;
 
 
@@ -53,6 +54,16 @@ public class BoardController {
 		 
 		 return "redirect:list";
 	 }
+	 
+	 @GetMapping("board/content_view")
+	 public String content_view(BoardVO boardVO,Model model) throws Exception {	
+		 log.info("content_view()실행");
+		
+		 model.addAttribute("content_view",boardService.getBoard(boardVO.getbId()));
+		 
+		 return "board/content_view";
+	 }
+	 
 	 
 	 
 	 
