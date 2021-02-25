@@ -34,7 +34,7 @@
 		</tr>
 		</c:forEach>
 		<tr>
-			<td colspan="5"><button type="button" class="btn btn-outline-warning bg-warning text-white" href="write_view">글작성</button></td>
+			<td colspan="5"><button type="button" class="btn btn-outline-warning bg-warning text-white" onclick="location.href='${pageContext.request.contextPath}/board/write_view'">글작성</button></td>
 		</tr>
 	</table>
 

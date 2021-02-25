@@ -21,7 +21,7 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
-	 @GetMapping("list")
+	 @GetMapping("board/list")
 	 public String list(Criteria cri, Model model) throws Exception {	
 		 //페이징 처리한 부분
 		 log.debug("list()...");
@@ -33,7 +33,7 @@ public class BoardController {
 		 log.info("total" + total);
 		 
 		 model.addAttribute("pageMaker", new PageVO(cri,total));
-		 return "list";
+		 return "board/list";
 	 }
 	
 }
