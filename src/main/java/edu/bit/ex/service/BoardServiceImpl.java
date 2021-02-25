@@ -65,6 +65,7 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void reply(BoardVO boardVO) {
+		mapper.replyShape(boardVO);
 		mapper.reply(boardVO);
 		
 	}

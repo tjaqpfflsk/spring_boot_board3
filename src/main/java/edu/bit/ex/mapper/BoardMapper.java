@@ -20,4 +20,5 @@ public interface BoardMapper {
 	public void delete(int bId);
 	public void reply(BoardVO boardVO);
 	public void hit(int bId);
+	public void replyShape(BoardVO boardVO);
 }

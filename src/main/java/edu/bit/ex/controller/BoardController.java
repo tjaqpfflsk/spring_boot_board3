@@ -94,7 +94,7 @@ public class BoardController {
 	 public String reply(BoardVO boardVO) throws Exception {	
 		 log.info("reply()실행");
 		 boardService.reply(boardVO);
-		 
+
 		 return "redirect:list";
 	 }
 	 

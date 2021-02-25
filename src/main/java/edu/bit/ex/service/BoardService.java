@@ -26,8 +26,6 @@ public interface BoardService {
 
 	public void hit(int bId);
 
-	
-	
 	}
 	
  
