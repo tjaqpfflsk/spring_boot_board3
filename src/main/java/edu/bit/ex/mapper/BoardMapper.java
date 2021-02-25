@@ -17,4 +17,7 @@ public interface BoardMapper {
 	public void insert(BoardVO boardVO);
 	public BoardVO getBoard(int bId);
 	public void modify(BoardVO boardVO);
+	public void delete(int bId);
+	public void reply(BoardVO boardVO);
+	public void hit(int bId);
 }

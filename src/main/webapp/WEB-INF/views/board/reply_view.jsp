@@ -13,24 +13,36 @@
 <body>
 
 <div class="container">
-  <h2 class="text-warning">글작성</h2>
-  <form action="${pageContext.request.contextPath}/board/write" method="post"> 
+  <h2 class="text-warning">${reply_view.bTitle}<span>에 대한 답변</span></h2>
+  <form action="${pageContext.request.contextPath}/board/reply" method="post"> 
   <table class="table table-striped">
+  		<input type="hidden" name="bId" value="${reply_view.bId}">
+			<input type="hidden" name="bGroup" value="${reply_view.bGroup}">
+			<input type="hidden" name="bStep" value="${reply_view.bStep}">
+			<input type="hidden" name="bIndent" value="${reply_view.bIndent}">
+      	<tr>
+			<td>번호</td>
+			<td>${reply_view.bId}</td>
+		</tr>
+		<tr>
+			<td>히트</td>
+			<td>${reply_view.bHit}</td>
+		</tr>
       	<tr>
 			<td>이름</td>
-			<td><input type="text" name="bName"/></td>
+			<td><input type="text" name="bName" value="${reply_view.bName}"/></td>
 		</tr>
 		<tr>
 			<td>제목</td>
-			<td><input type="text" name="bTitle"/></td>
+			<td><input type="text" name="bTitle" value="${reply_view.bTitle}"/></td>
 		</tr>
 		<tr>
 		<td>내용</td>
-			<td><textarea rows= "10" cols="100" name="bContent"/></textarea></td>
+			<td><textarea rows= "10" cols="100" name="bContent"/>${reply_view.bContent}</textarea></td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" class="btn btn-outline-warning bg-warning text-white" 
-			value="입력"><button type="button" class="btn btn-outline-warning bg-warning text-white"
+			value="답변"><button type="button" class="btn btn-outline-warning bg-warning text-white"
 			onclick="location.href='${pageContext.request.contextPath}/board/list'">목록보기</button></td>
 		</tr>
 	</table>

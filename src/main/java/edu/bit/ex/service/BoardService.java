@@ -19,6 +19,14 @@ public interface BoardService {
 	public BoardVO getBoard(int bId);
 
 	public void modify(BoardVO boardVO);
+
+	public void delete(int bId);
+
+	public void reply(BoardVO boardVO);
+
+	public void hit(int bId);
+
+	
 	
 	}
 	

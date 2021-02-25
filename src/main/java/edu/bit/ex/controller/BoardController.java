@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.bit.ex.page.Criteria;
 import edu.bit.ex.page.PageVO;
@@ -58,9 +59,9 @@ public class BoardController {
 	 @GetMapping("board/content_view")
 	 public String content_view(BoardVO boardVO,Model model) throws Exception {	
 		 log.info("content_view()실행");
-		
-		 model.addAttribute("content_view",boardService.getBoard(boardVO.getbId()));
 		 
+		 model.addAttribute("content_view",boardService.getBoard(boardVO.getbId()));
+		 boardService.hit(boardVO.getbId());
 		 return "board/content_view";
 	 }
 	 
@@ -72,6 +73,31 @@ public class BoardController {
 		 
 		 return "redirect:list";
 	 }
+	 
+	 @GetMapping("board/delete")
+	 public String delete(@RequestParam("bId") int bId) throws Exception {	
+		 log.info("delete()실행");
+		 boardService.delete(bId);
+		 
+		 return "redirect:list";
+	 }
+	 
+	 @GetMapping("board/reply_view")
+	 public String reply_view(BoardVO boardVO,Model model) throws Exception {	
+		 log.info("reply_view()실행");
+		 model.addAttribute("reply_view",boardService.getBoard(boardVO.getbId()));
+		 
+		 return "board/reply_view";
+	 }
+	 
+	 @PostMapping("board/reply")
+	 public String reply(BoardVO boardVO) throws Exception {	
+		 log.info("reply()실행");
+		 boardService.reply(boardVO);
+		 
+		 return "redirect:list";
+	 }
+	 
 	 
 	 
 	 

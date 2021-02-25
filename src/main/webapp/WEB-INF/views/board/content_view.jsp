@@ -44,9 +44,9 @@
 			<button type="button" class="btn btn-outline-warning bg-warning text-white"
 			onclick="location.href='${pageContext.request.contextPath}/board/list'">목록보기</button>
 			<button type="button" class="btn btn-outline-warning bg-warning text-white"
-			onclick="location.href='${pageContext.request.contextPath}/board/delete'">삭제</button>
+			onclick="location.href='${pageContext.request.contextPath}/board/delete?bId=${content_view.bId}'">삭제</button>
 			<button type="button" class="btn btn-outline-warning bg-warning text-white"
-			onclick="location.href='${pageContext.request.contextPath}/board/reply'">답변</button>
+			onclick="location.href='${pageContext.request.contextPath}/board/reply_view?bId=${content_view.bId}'">답변</button>
 			</td>
 			
 		</tr>
